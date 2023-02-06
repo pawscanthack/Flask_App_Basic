@@ -3,5 +3,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1 class="text-center">That Page</h1>
+<h1>{% block title %} That Title {% endblock %}</h1>
+  <h1 class="text-center">That Content (from that.html)</h1>
 {% endblock %}

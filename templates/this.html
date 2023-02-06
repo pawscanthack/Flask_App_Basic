@@ -3,5 +3,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1 class="text-center">This Page</h1>
+  <h1>{% block title %} This Title {% endblock %}</h1>
+  <h1 class="text-center">This Content (from this.html)</h1>
 {% endblock %}
