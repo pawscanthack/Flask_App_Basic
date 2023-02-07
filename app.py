@@ -1,7 +1,7 @@
 ## app.py
 
 import csv
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from datetime import datetime
 
 app = Flask(__name__)
@@ -26,3 +26,20 @@ def show_data():
         headers = next(reader)
         data = list(reader)
     return render_template('data.html', headers=headers, data=data)
+
+@app.route('/test')
+def test():
+    return render_template('cookie_monster.html')
+
+
+@app.route('/background_process')
+def background_process():
+    try:
+        test_answer = request.args.get('test_input', 0, type=str)
+        if test_answer.lower() == 'cookie monster':
+            
+            return jsonify(result='COOKIE COOKIE!!')
+        else:
+            return jsonify(result="Not the monster I was looking for!")
+    except Exception as e:
+        return str(e)

@@ -10,6 +10,7 @@
   </head>
   <body>
       {% include 'nav.html' %}
+      <!-- Moved the Navigation Bar to a nav.html -->
     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Flask Bootstrap App</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +34,8 @@
       {% block content %}{% endblock %}
     </div>
       {% include 'footer.html' %}
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  </body>
+    <script src="{{ url_for('static', filename='js/test.js') }}"></script>  
+</body>
 </html>
