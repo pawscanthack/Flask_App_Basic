@@ -1,0 +1,16 @@
+<!-- templates/cookie_monster.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{% block title %} Super Serious Test {% endblock %}</h1>
+		<div class='container'>
+		<h3>Welcome! Who loves cookies?</h3>
+			<form>
+				<input type=text size=5 name=test_input>
+				<a href=# id=process_input><button class='btn btn-default'>Submit</button></a>
+			</form>
+		<p id=result></p>
+		<img id="cookie-image" style="display: none;" src="../static/img/cookieMonster.jpeg">
+		</div>
+{% endblock %}
