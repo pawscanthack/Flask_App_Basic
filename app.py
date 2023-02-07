@@ -5,19 +5,19 @@ from flask import Flask, render_template, jsonify, request
 from datetime import datetime
 
 app = Flask(__name__)
-
+current_year = datetime.now().year
 @app.route('/')
 def index():
-    current_year = datetime.now().year
+    #current_year = datetime.now().year
     return render_template('index.html', current_year=current_year)
 
 @app.route('/this')
 def this_page():
-    return render_template('this.html')
+    return render_template('this.html', current_year=current_year)
 
 @app.route('/that')
 def that_page():
-    return render_template('that.html')
+    return render_template('that.html', current_year=current_year)
 
 @app.route('/data')
 def show_data():
@@ -25,11 +25,11 @@ def show_data():
         reader = csv.reader(f)
         headers = next(reader)
         data = list(reader)
-    return render_template('data.html', headers=headers, data=data)
+    return render_template('data.html', headers=headers, data=data, current_year=current_year)
 
 @app.route('/test')
-def test():
-    return render_template('cookie_monster.html')
+def test_page():
+    return render_template('cookie_monster.html', current_year=current_year)
 
 
 @app.route('/background_process')
