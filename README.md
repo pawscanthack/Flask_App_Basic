@@ -2,6 +2,6 @@
 #
 # Clone repository
 #
-# Use 'Python -m flask run' to start application
+# Use 'Python -m flask run' from FLASK_APP_BASIC directory to start application
 #
 # Enjoy!
